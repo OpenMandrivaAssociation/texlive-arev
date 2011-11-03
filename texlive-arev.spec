@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/arev
+# catalog-date 2007-02-25 15:08:52 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-arev
 Version:	20070225
 Release:	1
@@ -144,6 +150,7 @@ and kerkis.
 %doc %{_texmfdistdir}/source/fonts/arev/sfdtokernaccent
 %doc %{_texmfdistdir}/source/fonts/arev/unsetomssymbols.mtx
 %doc %{_texmfdistdir}/source/fonts/arev/unsetot1symbols.mtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -154,3 +161,5 @@ and kerkis.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

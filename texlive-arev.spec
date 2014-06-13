@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-arev
 Version:	20070225
-Release:	6
+Release:	7
 Summary:	Fonts and LaTeX support files for Arev Sans
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/arev

@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /fonts/arev
-# catalog-date 2007-02-25 15:08:52 +0100
-# catalog-license lppl
-# catalog-version undef
 Name:		texlive-arev
-Version:	20190228
+Version:	15878
 Release:	1
 Summary:	Fonts and LaTeX support files for Arev Sans
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/arev
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.r15878.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.doc.r15878.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.source.r15878.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -35,12 +29,12 @@ font mathematics support packages. Others are cmbright, hvmath
 and kerkis.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -143,25 +137,11 @@ and kerkis.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 20070225-2
-+ Revision: 749345
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20070225-1
-+ Revision: 717852
-- texlive-arev
-- texlive-arev
-- texlive-arev
-- texlive-arev
-- texlive-arev
-

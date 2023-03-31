@@ -1,6 +1,6 @@
 Name:		texlive-arev
 Version:	15878
-Release:	1
+Release:	2
 Summary:	Fonts and LaTeX support files for Arev Sans
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/arev

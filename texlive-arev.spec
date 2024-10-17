@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Fonts and LaTeX support files for Arev Sans
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/arev
+URL:		https://www.ctan.org/tex-archive/fonts/arev
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.doc.r%{version}.tar.xz

@@ -13,7 +13,8 @@ Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.doc.r%{tl_r
 Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/arev.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 The package arev provides type 1 and virtual fonts, together with LaTeX
@@ -28,3 +29,10 @@ is very similar to the SliTeX font lcmss, but heavier. Arev is one of a
 very small number of sans-font mathematics support packages. Others are
 cmbright, hvmath and kerkis.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from arev:
+Map arev.map
+TL_DROPIN_EOF
